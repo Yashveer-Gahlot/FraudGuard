@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FraudGuard Home</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+    }
+
+    .btn-upi {
+      background-color: #0077b6;
+    }
+
+    .btn-upi:hover {
+      background-color: #005f8a;
+    }
+
+    .btn-credit {
+      background-color: #43aa8b;
+    }
+
+    .btn-credit:hover {
+      background-color: #37846d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to FraudGuard</h1>
+  <div class="button-container">
+    <a href="https://fraudguard001.streamlit.app/" class="btn btn-upi">UPI Fraud Detection</a>
+    <a href="http://127.0.0.1:5000/" class="btn btn-credit">Credit Card Fraud Detection</a>
+  </div>
+</body>
+</html>
