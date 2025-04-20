@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+        .container {
+            padding: 30px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #ffffff;
+            margin-top: 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .result {
+            font-size: 2em;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .fraud {
+            background-color: #fbe9e7;
+            color: #d32f2f;
+            border: 2px solid #d32f2f;
+        }
+        .safe {
+            background-color: #e8f5e9;
+            color: #388e3c;
+            border: 2px solid hsl(123, 65%, 32%);
+        }
+        .probability {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #e3f2fd;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1e88e5;
+        }
+        button {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0b7dda;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fraud Detection Result</h2>
+        
+        <div class="result {% if 'Fraudulent' in prediction %}fraud{% else %}safe{% endif %}">
+            {{ prediction }}
+        </div>
+        
+        {% if probability %}
+        <div class="probability">
+            <p>Fraud Probability: <strong>{{ probability }}</strong></p>
+        </div>
+        {% endif %}
+        
+        <p>Model used: <strong>{{ model }}</strong></p>
+        
+        <button onclick="window.location.href='/'">Check Another Transaction</button>
+    </div>
+</body>
+</html>
