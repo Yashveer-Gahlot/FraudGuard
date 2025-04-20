@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FraudGuard Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            text-align: center;
+            padding-top: 100px;
+            background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2e3c5d;
+        }
+
+        .btn-container {
+            margin-top: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+            background-color: #0077cc;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #005fa3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to FraudGuard</h1>
+    <p>Select a detection system to proceed:</p>
+
+    <div class="btn-container">
+        <a href="http://127.0.0.1:5000/" class="btn">Credit Card Fraud Detection</a>
+        <a href="/upi" class="btn">UPI Fraud Detection</a> <!-- Change href when ready -->
+    </div>
+</body>
+</html>
